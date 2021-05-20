@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Work Contacts</string>
+    <string name="title_activity_splashscreen">SplashScreen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_search">Search contacts……</string>
+    <string name="contact_details">Contact</string>
+</resources>
