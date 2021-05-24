@@ -14,6 +14,7 @@ import java.util.*
 
 class EmployeesListViewModel  : ViewModel() {
 
+    // setup retrofit builder
     private var dataRepository =  EmployeeDataRepository(RetrofitBuilder.getService())
 
     private val employeeLiveData = MutableLiveData<List<Employee>>()

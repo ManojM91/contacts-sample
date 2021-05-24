@@ -149,6 +149,32 @@ class EmployeeDetailFragment(private val employee: Employee) : Fragment(), OnMap
         }
     }
 
+
+
+    fun checkContactAvailableAndSave(context: Context, number: String?) {
+
+            /// number is the phone number
+            val lookupUri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number))
+            val mPhoneNumberProjection =
+                arrayOf(PhoneLookup._ID, PhoneLookup.NUMBER, PhoneLookup.DISPLAY_NAME)
+            val cur: Cursor? =
+                context.contentResolver.query(lookupUri, mPhoneNumberProjection, null, null, null)
+            try {
+                if (cur!!.moveToFirst()) {
+                    Toast.makeText(
+                        activity,
+                        "Contact already exists in your phone book",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }  else{
+                    createContact()
+                }
+            } finally {
+                cur!!.close()
+            }
+
+    }
+
     fun createContact(){
         val intent =
             Intent(Intent.ACTION_INSERT, ContactsContract.Contacts.CONTENT_URI).apply {
@@ -176,31 +202,6 @@ class EmployeeDetailFragment(private val employee: Employee) : Fragment(), OnMap
             }
         startActivity(intent)
     }
-
-    fun checkContactAvailableAndSave(context: Context, number: String?) {
-
-            /// number is the phone number
-            val lookupUri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number))
-            val mPhoneNumberProjection =
-                arrayOf(PhoneLookup._ID, PhoneLookup.NUMBER, PhoneLookup.DISPLAY_NAME)
-            val cur: Cursor? =
-                context.contentResolver.query(lookupUri, mPhoneNumberProjection, null, null, null)
-            try {
-                if (cur!!.moveToFirst()) {
-                    Toast.makeText(
-                        activity,
-                        "Contact already exists in your phone book",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }  else{
-                    createContact()
-                }
-            } finally {
-                cur!!.close()
-            }
-
-    }
-
 
 
     override fun onRequestPermissionsResult(

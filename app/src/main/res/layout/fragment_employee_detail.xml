@@ -145,12 +145,18 @@
             android:id="@+id/saveContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="5dp"
             android:layout_below="@id/details_button_layout"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
             android:text="Save Contact"
             android:textAllCaps="false"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
     </RelativeLayout>
 
     <com.google.android.gms.maps.MapView

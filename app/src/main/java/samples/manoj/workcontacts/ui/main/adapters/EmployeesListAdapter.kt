@@ -41,6 +41,7 @@ class EmployeesListAdapter(
         holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val activity = v!!.context as AppCompatActivity
+                //move to profile screen
                 val employeeDetailFragment = EmployeeDetailFragment(employeeListFiltered[position])
                 activity.supportFragmentManager.beginTransaction()
                     .replace(R.id.container, employeeDetailFragment)
@@ -52,7 +53,7 @@ class EmployeesListAdapter(
 
     //this method is giving the size of the list
     override fun getItemCount(): Int {
-            return employeeListFiltered.size;
+        return employeeListFiltered.size;
     }
 
     //the class is hodling the list view

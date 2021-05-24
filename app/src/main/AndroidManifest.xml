@@ -51,6 +51,7 @@
             android:windowSoftInputMode="adjustPan|adjustResize"
             android:launchMode="singleTop">
 
+            <!--Search  functionality-->
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>

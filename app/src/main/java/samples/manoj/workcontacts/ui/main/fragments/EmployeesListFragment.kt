@@ -52,7 +52,7 @@ class EmployeesListFragment : Fragment() {
         viewModel = ViewModelProvider(activity!!).get(EmployeesListViewModel::class.java)
 
         viewModel.getEmployees().observe(activity!!){
-          //  binding.message.text  = it.get(0).name
+            //giving the received objects to adapter
             employeelistAdapter  =  EmployeesListAdapter(it as ArrayList<Employee>)
             employeelistAdapter.registerAdapterDataObserver(
                 RecyclerViewDataObserver(
@@ -69,6 +69,8 @@ class EmployeesListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 
         inflater.inflate(R.menu.employee_list_menu, menu)
+
+        //setup of voice search in menu
         val searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager?
 
         val searchViewMenuItem = menu.findItem(R.id.action_search)
