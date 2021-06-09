@@ -1,9 +1,9 @@
-
+A simple contacts app with MVVM, Livedata, Kotlin, Retrofit, Google Maps etc.
+Built on requirements mentioned below:
 
 https://user-images.githubusercontent.com/10277971/119384536-7797cd00-bce2-11eb-8105-ddfb1c4e3cc3.mp4
 
 # contacts-sample
-
 
 Develop a Mobile App which display the Users by consuming a REST API
 https://jsonplaceholder.typicode.com/users
