@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,165 +8,178 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.fragments.EmployeeDetailFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/basicDetailsCard"
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="12dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/initials"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:insetLeft="0dp"
-                android:insetTop="0dp"
-                android:insetRight="0dp"
-                android:insetBottom="0dp"
-                android:padding="0dp"
-                android:text="aa"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconSize="50dp"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle" />
-
-            <LinearLayout
-                android:id="@+id/lldetails"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/basicDetailsCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/initials"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
 
-                <TextView
-                    android:id="@+id/txtEmployeeName"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/initials"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        android:padding="0dp"
+                        android:text="aa"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="50dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Circle" />
+
+                    <LinearLayout
+                        android:id="@+id/lldetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/initials"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtEmployeeName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="Manoj Muralidharan"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/txtPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="+91 8310721098"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/txtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="manoj.muralidharan91@gmail.com"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/txtWebsite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="10dp"
+                            android:text="www.facebook.com"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/details_buttons_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/basicDetailsCard">
+
+                <LinearLayout
+                    android:id="@+id/details_button_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Manoj Muralidharan"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textSize="18dp" />
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/txtPhoneNumber"
+                    <Button
+                        android:id="@+id/call_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/circle_phone"
+                        android:text="Call"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/email_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/circle_mail"
+                        android:text="email"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/circle_phone"
+                        android:text="Website"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/saveContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="+91 8310721098"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                    android:textSize="16dp" />
+                    android:layout_below="@id/details_button_layout"
+                    android:layout_marginStart="10dp"
 
-                <TextView
-                    android:id="@+id/txtEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="manoj.muralidharan91@gmail.com"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                    android:textSize="16dp" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:text="Save Contact"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
+            </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/txtWebsite"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:ellipsize = "end"
-                    android:text="www.facebook.com"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/details_buttons_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <RelativeLayout
-        android:id="@+id/details_buttons_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/basicDetailsCard">
-
-        <LinearLayout
-            android:id="@+id/details_button_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <Button
-                android:id="@+id/call_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/circle_phone"
-                android:textAllCaps="false"
-                android:text="Call" />
-
-            <Button
-                android:id="@+id/email_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/circle_mail"
-                android:textAllCaps="false"
-                android:text="email" />
-
-            <Button
-                android:id="@+id/website"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/circle_phone"
-                android:textAllCaps="false"
-                android:text="Website" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/saveContact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/details_button_layout"
-            android:layout_marginStart="10dp"
-
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:padding="5dp"
-            android:text="Save Contact"
-            android:textAllCaps="false"
-            android:textSize="18sp" />
-    </RelativeLayout>
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/details_buttons_layout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </ScrollView>
 </RelativeLayout>

@@ -47,6 +47,7 @@ class EmployeeDetailFragment(private val employee: Employee) : Fragment(), OnMap
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        retainInstance  = true
         fragmentBinding = FragmentEmployeeDetailBinding.inflate(inflater, container, false)
         map = binding.mapView
         map.onCreate(savedInstanceState)
