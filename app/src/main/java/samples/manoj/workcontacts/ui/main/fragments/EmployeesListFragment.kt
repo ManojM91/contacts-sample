@@ -136,11 +136,13 @@ class EmployeesListFragment : Fragment() {
         // Set title bar
         (activity as EmployeesListActivity?)?.setActionBarTitle("Contact List")
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         fragmentBinding  = null
     }
 
+    // set received STT to searchview from android SpeechRecognizer
     fun processVoiceData(voiceData: String?) {
         searchView.setQuery(voiceData, false)
     }

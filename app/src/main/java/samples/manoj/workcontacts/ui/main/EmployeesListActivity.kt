@@ -19,6 +19,7 @@ class EmployeesListActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
+        //getting a Viewbinding instance
         binding = EmployeeActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -33,7 +34,7 @@ class EmployeesListActivity : AppCompatActivity() {
 
     }
 
-    //  manage  actionbar title
+    //  manage actionbar title
     fun setActionBarTitle(title: String?) {
         supportActionBar!!.title = title
     }

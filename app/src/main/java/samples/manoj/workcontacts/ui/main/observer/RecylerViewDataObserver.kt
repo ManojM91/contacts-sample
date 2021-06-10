@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 class RecyclerViewDataObserver(private val recyclerView: RecyclerView, ev1: View?, ev2: View?) : AdapterDataObserver() {
     private val emptyView1: View?
     private val emptyView2: View?
+
+    // recycler View is UI managed from here
     private fun checkIfEmpty() {
         if (emptyView1 != null && emptyView2!=null && recyclerView.adapter != null) {
             val emptyViewVisible = recyclerView.adapter!!.itemCount == 0

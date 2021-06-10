@@ -3,6 +3,7 @@ package samples.manoj.workcontacts.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import samples.manoj.workcontacts.R
 
@@ -12,11 +13,10 @@ class Splashscreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
 
-        val SPLASH_TIME_OUT = 2000
         val homeIntent = Intent(this@Splashscreen, EmployeesListActivity::class.java)
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             startActivity(homeIntent)
             finish()
-        }, SPLASH_TIME_OUT.toLong())
+        }, 2000)
     }
 }

@@ -34,14 +34,15 @@ class EmployeesListAdapter(
         return ViewHolder(v)
     }
 
-    //this method is binding the data on the list
+    //this method is binding the data on the recyclerview
     override fun onBindViewHolder(holder: EmployeesListAdapter.ViewHolder, position: Int) {
         holder.bindItems(employeeListFiltered[position])
 
+        // on click pass the selected onject to details fragment
         holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val activity = v!!.context as AppCompatActivity
-                //move to profile screen
+                //move to details screen
                 val employeeDetailFragment = EmployeeDetailFragment(employeeListFiltered[position])
                 activity.supportFragmentManager.beginTransaction()
                     .replace(R.id.container, employeeDetailFragment)
@@ -56,7 +57,6 @@ class EmployeesListAdapter(
         return employeeListFiltered.size;
     }
 
-    //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(employee: Employee) {
@@ -66,6 +66,7 @@ class EmployeesListAdapter(
             textViewName.text = employee.name
             textViewAddress.text = employee.phone
 
+            // getting the initials of the name
             materialButton.text = employee.name!!
                 .split(' ')
                 .mapNotNull { it.firstOrNull()?.toString() }
